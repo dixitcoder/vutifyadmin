@@ -1,4 +1,4 @@
-# React Tilt
+# Vue JS
 
 [![npm version][npm-badge]][npm-url]
 [![npm downloads][downloads-badge]][npm-url]
