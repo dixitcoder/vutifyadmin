@@ -1,245 +1,137 @@
-# React Tilt
-
-[![npm version][npm-badge]][npm-url]
-[![npm downloads][downloads-badge]][npm-url]
-[![npm bundle size][size-badge]][npm-url]
-[![Open issues][issues-badge]][issues-url]
-[![TypeScript][typescript-badge]][typescript-url]
-[![semantic-release][semantic-badge]][semantic-url]
-
-[![CI][lint-badge]][lint-url]
-[![CI][tsc-badge]][tsc-url]
-[![CI][build-badge]][build-url]
-[![CI][test-badge]][test-url]
-[![Codecov Coverage][coverage-badge]][coverage-url]
-
-[![CI][deploy-storybook-badge]][deploy-storybook-url]
-[![CI][npm-release-badge]][npm-release-url]
-
-_👀 Easily apply tilt hover effect on React components_
-
-[![](misc/demo.gif)](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--glare-effect)
-
-## [Demo 💥](https://mkosir.github.io/react-parallax-tilt)
-
-## Install
-
-```bash
-npm install react-parallax-tilt
-```
-
-## Features
-
-- Lightweight (≈3kB), zero dependencies 📦
-- Works with React v15 onwards
-- Supports **mouse** and **touch** events
-- Support for device tilting (**gyroscope**)
-- **Glare** effect 🌟 with custom props (color, position,...) [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--parallax-effect-glare-scale)
-- Events to keep track of component values 📐 (tilt, glare, mousemove,...) [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--event-params)
-- Many effects that can be easily applied:
-  - **scale** on hover [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--scale)
-  - **disable** x/y axis [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--tilt-disable-axis)
-  - **flip** component vertically/horizontally [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--flip-vh)
-  - tilt hover effect on the **whole window** [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--track-on-window)
-  - tilt component with custom **manual input** 🕹 (joystick, slider etc.) [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--tilt-manual-input)
-  - **parallax** effect on overlaid images [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--parallax-effect-img)
-
-## Example
-
-```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Tilt from 'react-parallax-tilt';
-
-const App = () => {
-  return (
-    <Tilt>
-      <div style={{ height: '300px', backgroundColor: 'darkgreen' }}>
-        <h1>React Parallax Tilt 👀</h1>
-      </div>
-    </Tilt>
-  );
-};
-
-ReactDOM.render(<App />, document.getElementById('root'));
-```
-
-## Props
-
-All of the props are optional.  
-Below is the complete list of possible props and their options:
-
-> ▶︎ indicates the default value if there's one
-
-**tiltEnable**: _boolean_ ▶︎ `true`  
-Boolean to enable/disable tilt effect.
-
-**tiltReverse**: _boolean_ ▶︎ `false`  
-Reverse the tilt direction.
-
-**tiltAngleXInitial**: _number_ ▶︎ `0`  
-Initial tilt value (degrees) on x axis.
-
-**tiltAngleYInitial**: _number_ ▶︎ `0`  
-Initial tilt value (degrees) on y axis.
-
-**tiltMaxAngleX**: _number_ ▶︎ `20`  
-Max tilt rotation (degrees) on x axis (range: `0°-90°`).
-
-**tiltMaxAngleY**: _number_ ▶︎ `20`  
-Max tilt rotation (degrees) on y axis (range: `0°-90°`).
-
-**tiltAxis**: _'x' | 'y'_ ▶︎ `undefined`  
-Enable tilt on single axis.
-
-**tiltAngleXManual**: _number_ | null} ▶︎ `null`  
-Manual tilt rotation (degrees) on x axis.
-
-**tiltAngleYManual**: _number_ | null} ▶︎ `null`  
-Manual tilt rotation (degrees) on y axis.
-
-**glareEnable**: _boolean_ ▶︎ `false`  
-Boolean to enable/disable glare effect.
-
-**glareMaxOpacity**: _number_ ▶︎ `0.7`  
-The maximum glare opacity (range: `0-1`).
-
-**glareColor**: _string_ ▶︎ `#ffffff`  
-Set color of glare effect.
-
-**glareBorderRadius**: _string_ ▶︎ `0`  
-Accepts any standard CSS border radius. Useful if the glare color is different to the page color.
-
-**glarePosition**: _'top' | 'right' | 'bottom' | 'left' | 'all'_ ▶︎ `bottom`  
-Set position of glare effect.
-
-**glareReverse**: _boolean_ ▶︎ `false`  
-Reverse the glare direction.
-
-**scale**: _number_ ▶︎ `1`  
-Scale of the component (1.5 = 150%, 2 = 200%, etc.).
-
-**perspective**: _number_ ▶︎ `1000`  
-The perspective property defines how far the object (wrapped/child component) is away from the user. The lower the more extreme the tilt gets.
-
-**flipVertically**: _boolean_ ▶︎ `false`  
-Boolean to enable/disable vertical flip of component.
-
-**flipHorizontally**: _boolean_ ▶︎ `false`  
-Boolean to enable/disable horizontal flip of component.
-
-**reset**: _boolean_ ▶︎ `true`  
-If the effects has to be reset on `onLeave` event.
-
-**transitionEasing**: _string_ ▶︎ `cubic-bezier(.03,.98,.52,.99)`  
-Easing of the transition when manipulating the component.
-
-**transitionSpeed**: _number_ ▶︎ `400`  
-Speed of the transition when manipulating the component.
-
-**trackOnWindow**: _boolean_ ▶︎ `false`  
-Track mouse and touch events on the whole window.
-
-**gyroscope**: _boolean_ ▶︎ `false`  
-Boolean to enable/disable device orientation detection.
-
-**onMove**: _Function_ => ({ **tiltAngleX**: _number_, **tiltAngleY**: _number_, **tiltAngleXPercentage**: _number_, **tiltAngleYPercentage**: _number_, **glareAngle**: _number_, **glareOpacity**: _number_, **eventType**: _string_ }) => _void_  
-Gets triggered when user moves on the component.
-
-**onEnter**: _Function_ => (**eventType**: _string_) => _void_  
-Gets triggered when user enters the component.
-
-**onLeave**: _Function_ => (**eventType**: _string_) => _void_  
-Gets triggered when user leaves the component.
-
-## Gyroscope - Device Orientation
-
-Please keep in mind that detecting device orientation is currently [experimental technology](https://developer.mozilla.org/en-US/docs/MDN/Contribute/Guidelines/Conventions_definitions#Experimental).  
-Check the [browser compatibility](https://caniuse.com/#search=DeviceOrientation) before using this in production.  
-A few takeaways when using device orientation event:
-
-- always use secure origins (such as `https`)
-- it doesn't work in all browsers when using it in cross-origin `<iframe>` element
-
-<details>
-<summary>Using device orientation on iOS 13+</summary>
-
-Apple decided turning device motion and orientation off by default since iOS 12.2.  
-With iOS 13+ permission API can be used to gain access to device orientation event.
-
-When using gyroscope feature:
-
-```jsx
-<Tilt gyroscope={true}>
-  <h1>Vue Parallax Tilt 👀</h1>
-</Tilt>
-```
-
-it will present a permission dialog prompting the user to allow motion and orientation access at domain level:  
-![](misc/device_orientation.jpg)
-
-Note that user needs to take some action (like tapping a button) to be able to display the dialog (invoking dialog on page load is not possible).
-
-</details>
-
-## Development
-
-_Easily set up a local development environment!_
-
-Build project and start storybook on [localhost](http://localhost:9009):
-
-- clone
-- `npm install`
-- `npm start`
-
-**Start coding!** 🎉
-
-<details>
-<summary>Or setup with npm link</summary>
-Clone this repo on your machine, navigate to its location in the terminal and run:
-
-```bash
-npm install
-npm link # link your local repo to your global packages
-npm run build:watch # build the files and watch for changes
-```
-
-Clone project repo that you wish to test with react-parallax-tilt library and run:
-
-```bash
-npm install
-npm link react-parallax-tilt # link your local copy into this project's node_modules
-npm start
-```
-
-</details>
-
-## Contributing
-
-All contributions are welcome!  
-Please take a moment to review guidelines [PR](.github/pull_request_template.md) | [Issues](https://github.com/mkosir/react-parallax-tilt/issues/new/choose)
-
-[npm-url]: https://www.npmjs.com/package/react-parallax-tilt
-[npm-badge]: https://img.shields.io/npm/v/react-parallax-tilt.svg
-[size-badge]: https://badgen.net/bundlephobia/minzip/react-parallax-tilt
-[downloads-badge]: https://img.shields.io/npm/dm/react-parallax-tilt.svg?color=blue
-[lint-badge]: https://github.com/mkosir/react-parallax-tilt/actions/workflows/lint.yml/badge.svg
-[lint-url]: https://github.com/mkosir/react-parallax-tilt/actions/workflows/lint.yml
-[tsc-badge]: https://github.com/mkosir/react-parallax-tilt/actions/workflows/tsc.yml/badge.svg
-[tsc-url]: https://github.com/mkosir/react-parallax-tilt/actions/workflows/tsc.yml
-[build-badge]: https://github.com/mkosir/react-parallax-tilt/actions/workflows/build.yml/badge.svg
-[build-url]: https://github.com/mkosir/react-parallax-tilt/actions/workflows/build.yml
-[test-badge]: https://github.com/mkosir/react-parallax-tilt/actions/workflows/test.yml/badge.svg
-[test-url]: https://github.com/mkosir/react-parallax-tilt/actions/workflows/test.yml
-[deploy-storybook-badge]: https://github.com/mkosir/react-parallax-tilt/actions/workflows/deploy-storybook.yml/badge.svg
-[deploy-storybook-url]: https://github.com/mkosir/react-parallax-tilt/actions/workflows/deploy-storybook.yml
-[npm-release-badge]: https://github.com/mkosir/react-parallax-tilt/actions/workflows/npm-release.yml/badge.svg
-[npm-release-url]: https://github.com/mkosir/react-parallax-tilt/actions/workflows/npm-release.yml
-[coverage-badge]: https://codecov.io/gh/mkosir/react-parallax-tilt/branch/main/graph/badge.svg
-[coverage-url]: https://codecov.io/gh/mkosir/react-parallax-tilt
-[issues-badge]: https://img.shields.io/github/issues/mkosir/react-parallax-tilt
-[issues-url]: https://github.com/mkosir/react-parallax-tilt/issues
-[semantic-badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
-[semantic-url]: https://github.com/semantic-release/semantic-release
-[typescript-badge]: https://badges.frapsoft.com/typescript/code/typescript.svg?v=101
-[typescript-url]: https://github.com/microsoft/TypeScript
+<!--
+<h2 align="center">
+  Welcome to Al Siam World!
+  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28">
+</h2>
+-->
+
+<!--
+<p align="center">
+  <a href="https://github.com/alsiam"><img src="https://readme-typing-svg.herokuapp.com/?lines=Self%20Taught%20Programmer;Front%20End%20Developer;1.5%2B%20years%20of%20coding%20experience;Always%20learning%20new%20things&center=true&width=380&height=45"></a>
+</p>
+
+ -->
+
+<a href="https://komarev.com/ghpvc/?username=alsiam">
+  <img align="right" src="https://komarev.com/ghpvc/?username=alsiam&label=Visitors&color=0e75b6&style=flat" alt="Profile visitor" />
+</a>
+
+
+[![wakatime](https://wakatime.com/badge/user/eebb3dd8-d9b2-40de-9b88-6fd6cac99dbc.svg)](https://wakatime.com/@eebb3dd8-d9b2-40de-9b88-6fd6cac99dbc)
+
+<!-- Intro  -->
+<h3 align="center">
+        <samp>&gt; Hey There!, I am
+                <b><a target="_blank" href="https://alsiam.com">Saif Al Siam</a></b>
+        </samp>
+</h3>
+
+
+<p align="center"> 
+  <samp>
+    <a href="https://www.google.com/search?q=Saif+Al+Siam">「 Google Me 」</a>
+    <br>
+    「 I am a full stack web appplication developer from <b>Bangladesh</b> 」
+    <br>
+    <br>
+  </samp>
+</p>
+
+<p align="center">
+ <a href="https://alsiam.com" target="blank">
+  <img src="https://img.shields.io/badge/Website-DC143C?style=for-the-badge&logo=medium&logoColor=white" alt="alsiam" />
+ </a>
+ <a href="https://linkedin.com/in/saifalsiam" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="alsiam"/>
+ </a>
+ <a href="https://dev.to/alsiam" target="_blank">
+  <img src="https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white" alt="alsiam" />
+ </a>
+ <a href="https://twitter.com/alsiam_dev" target="_blank">
+  <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />
+ </a>
+ <a href="https://instagram.com/alsiam.dev" target="_blank">
+  <img src="https://img.shields.io/badge/Instagram-fe4164?style=for-the-badge&logo=instagram&logoColor=white" alt="alsiam" />
+ </a> 
+ <a href="https://facebook.com/alsiam.dev" target="_blank">
+  <img src="https://img.shields.io/badge/Facebook-20BEFF?&style=for-the-badge&logo=facebook&logoColor=white" alt="alsiam"  />
+  </a> 
+</p>
+<br />
+
+<!-- About Section -->
+ # About me
+ 
+<p>
+ <img align="right" width="350" src="/assets/programmer.gif" alt="Coding gif" />
+  
+ ✌️ &emsp; Enjoy to do programming and sharing knowledge <br/><br/>
+ ❤️ &emsp; Love to writing code and learning new features<br/><br/>
+ 📧 &emsp; Reach me anytime: alsiam.dev@gmail.com<br/><br/>
+ 💬 &emsp; Ask me about anything [here](https://github.com/alsiam/alsiam/issues)
+
+</p>
+
+<br/>
+<br/>
+<br/>
+
+## Use To Code
+
+![Javascript](https://img.shields.io/badge/Javascript-F0DB4F?style=for-the-badge&labelColor=black&logo=javascript&logoColor=F0DB4F)
+![Typescript](https://img.shields.io/badge/Typescript-007acc?style=for-the-badge&labelColor=black&logo=typescript&logoColor=007acc)
+![React](https://img.shields.io/badge/-React-61DBFB?style=for-the-badge&labelColor=black&logo=react&logoColor=61DBFB)
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Nodejs](https://img.shields.io/badge/Nodejs-3C873A?style=for-the-badge&labelColor=black&logo=node.js&logoColor=3C873A)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![SASS Badge](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Ant-Design](https://img.shields.io/badge/AntDesign-0170FE?style=for-the-badge&logo=antdesign&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-092749?style=for-the-badge&logo=tailwindcss&logoColor=06B6D4&labelColor=000000)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Strapi](https://img.shields.io/badge/strapi-2E7EEA?style=for-the-badge&logo=strapi&logoColor=white)
+![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
+![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+![React Query](https://img.shields.io/badge/-React_Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white)
+![VSCode](https://img.shields.io/badge/Visual_Studio-0078d7?style=for-the-badge&logo=visual%20studio&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+<br/>
+
+## Top Open Source -
+[![Web Projects](https://github-readme-stats.vercel.app/api/pin/?username=alsiam&repo=web-projects&border_color=7F3FBF&bg_color=0D1117&title_color=C9D1D9&text_color=8B949E&icon_color=7F3FBF)](https://github.com/alsiam/web-projects)
+[![Al Folio](https://github-readme-stats.vercel.app/api/pin/?username=alsiam&repo=al-folio&border_color=7F3FBF&bg_color=0D1117&title_color=C9D1D9&text_color=8B949E&icon_color=7F3FBF)](https://github.com/alsiam/al-folio)
+[![Al Siam Readme](https://github-readme-stats.vercel.app/api/pin/?username=alsiam&repo=alsiam&border_color=7F3FBF&bg_color=0D1117&title_color=C9D1D9&text_color=8B949E&icon_color=7F3FBF)](https://github.com/alsiam/alsiam)
+[![Al Siam Teminal](https://github-readme-stats.vercel.app/api/pin/?username=alsiam&repo=alsiam.github.io&border_color=7F3FBF&bg_color=0D1117&title_color=C9D1D9&text_color=8B949E&icon_color=7F3FBF)](https://github.com/alsiam/alsiam.github.io)
+
+<p align="left">
+  <a href="https://github.com/alsiam?tab=repositories" target="_blank"><img alt="All Repositories" title="All Repositories" src="https://img.shields.io/badge/-All%20Repos-2962FF?style=for-the-badge&logo=koding&logoColor=white"/></a>
+</p>
+
+<br/>
+<hr/>
+<br/>
+
+<p align="center">
+  <a href="https://github.com/alsiam">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=alsiam&theme=radical&border=7F3FBF&background=0D1117" alt="Saif's GitHub streak"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/alsiam">
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=alsiam&theme=radical" alt="Al Siam's GitHub Contribution"/>
+  </a>
+</p>
+
+<a> 
+    <a href="https://github.com/alsiam"><img alt="Al Siam's Github Stats" src="https://denvercoder1-github-readme-stats.vercel.app/api?username=alsiam&show_icons=true&count_private=true&theme=react&border_color=7F3FBF&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866" height="192px" width="49.5%"/></a>
+  <a href="https://github.com/alsiam"><img alt="Al Siam's Top Languages" src="https://denvercoder1-github-readme-stats.vercel.app/api/top-langs/?username=alsiam&langs_count=8&layout=compact&theme=react&border_color=7F3FBF&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866" height="192px" width="49.5%"/></a>
+  <br/>
+</a>
+
+
+![Al Siam's Graph](https://github-readme-activity-graph.cyclic.app/graph?username=alsiam&custom_title=Al%20Siam's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=7F3FBF&line=7F3FBF&point=7F3FBF&area_color=FFFFFF&title_color=FFFFFF&area=true)
