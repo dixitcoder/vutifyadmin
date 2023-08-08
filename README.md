@@ -116,35 +116,6 @@ The recommended way to start a Vite-powered Vue project
   <img src="https://github.com/vuejs/create-vue/blob/main/media/screenshot-cli.png?raw=true" width="800">
 </p>
 
-<p align="center">
-  <a href="https://vuetifyjs.com" target="_blank">
-    <img alt="Vuetify Logo" width="100" src="https://cdn.vuetifyjs.com/images/logos/logo.svg">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://www.npmjs.com/package/vuetify">
-    <img src="https://img.shields.io/npm/dt/vuetify.svg" alt="Downloads">
-  </a>
-  <a href="https://www.npmjs.com/package/vuetify">
-    <img src="https://img.shields.io/npm/dm/vuetify.svg" alt="Downloads">
-  </a>
-  <br>
-  <a href="https://github.com/vuetifyjs/vuetify/blob/master/LICENSE.md">
-    <img src="https://img.shields.io/npm/l/vuetify.svg" alt="License">
-  </a>
-  <a href="https://community.vuetifyjs.com">
-    <img src="https://discordapp.com/api/guilds/340160225338195969/widget.png" alt="Chat">
-  </a>
-  <br>
-  <a href="https://www.npmjs.com/package/vuetify">
-    <img src="https://img.shields.io/npm/v/vuetify.svg" alt="Version">
-  </a>
-  <a href="https://cdnjs.com/libraries/vuetify">
-    <img src="https://img.shields.io/cdnjs/v/vuetify.svg" alt="CDN">
-  </a>
-</p>
-
 ## Getting started
 
 ### Install dependencies
