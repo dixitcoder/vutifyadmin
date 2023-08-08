@@ -144,3 +144,37 @@ The recommended way to start a Vite-powered Vue project
     <img src="https://img.shields.io/cdnjs/v/vuetify.svg" alt="CDN">
   </a>
 </p>
+
+## Getting started
+
+### Install dependencies
+
+```
+npm install
+```
+
+### Start a local server
+
+```
+npm run dev
+```
+
+### Start a hot reloading local development server
+
+```
+npm run serve
+```
+
+### Run a production build
+
+```
+npm run build
+```
+
+### Check files for syntax errors
+
+```
+npm run lint
+```
+
+### Run your tests
