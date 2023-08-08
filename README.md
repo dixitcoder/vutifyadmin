@@ -22,7 +22,7 @@
 <!-- Intro  -->
 <h3 align="center">
         <samp>&gt; Hey There!, I am
-                <b><a target="_blank" href="https://www.instagram.com/dixitcoder/">Saif Al Dixit Patel</a></b>
+                <b><a target="_blank" href="https://www.instagram.com/dixitcoder/">Saif Al Vue js</a></b>
         </samp>
 </h3>
 
