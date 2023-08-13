@@ -52,7 +52,7 @@ const upgradeBanner = computed(() => {
 
         <IconBtn
           class="me-2"
-          href="https://github.com/themeselection/materio-vuetify-vuejs-admin-template-free"
+          href="https://github.com/dixitcoder/vutifyadmin"
           target="_blank"
           rel="noopener noreferrer"
         >
