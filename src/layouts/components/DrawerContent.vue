@@ -1,27 +1,23 @@
 <script setup>
-import logo from '@images/logo.svg?raw'
-import upgradeBannerDark from '@images/pro/upgrade-banner-dark.png'
-import upgradeBannerLight from '@images/pro/upgrade-banner-light.png'
-import {
-  VerticalNavLink,
-  VerticalNavSectionTitle,
-} from '@layouts'
-import { useTheme } from 'vuetify'
+import logo from "@images/logo.svg?raw";
+import upgradeBannerDark from "@images/pro/upgrade-banner-dark.png";
+import upgradeBannerLight from "@images/pro/upgrade-banner-light.png";
+import { VerticalNavLink, VerticalNavSectionTitle } from "@layouts";
+import { useTheme } from "vuetify";
 
-const vuetifyTheme = useTheme()
+const vuetifyTheme = useTheme();
 
 const upgradeBanner = computed(() => {
-  return vuetifyTheme.global.name.value === 'light' ? upgradeBannerLight : upgradeBannerDark
-})
+  return vuetifyTheme.global.name.value === "light"
+    ? upgradeBannerLight
+    : upgradeBannerDark;
+});
 </script>
 
 <template>
   <!-- 👉 Nav header -->
   <div class="nav-header">
-    <RouterLink
-      to="/"
-      class="app-logo d-flex align-center gap-x-3 app-title-wrapper"
-    >
+    <RouterLink to="/" class="app-logo d-flex align-center gap-x-3 app-title-wrapper">
       <!-- ℹ️ You can also use img tag or VImg here -->
       <div v-html="logo" />
 
@@ -39,14 +35,14 @@ const upgradeBanner = computed(() => {
       :item="{
         title: 'Dashboard',
         to: 'index',
-        icon: { icon: 'mdi-home-outline' }
+        icon: { icon: 'mdi-home-outline' },
       }"
     />
     <VerticalNavLink
       :item="{
         title: 'Account Settings',
         to: 'account-settings',
-        icon: { icon: 'mdi-account-cog-outline' }
+        icon: { icon: 'mdi-account-cog-outline' },
       }"
     />
     <!-- 👉 Pages -->
@@ -56,7 +52,7 @@ const upgradeBanner = computed(() => {
         title: 'Login',
         to: 'login',
         target: '_blank',
-        icon: { icon: 'mdi-login' }
+        icon: { icon: 'mdi-login' },
       }"
     />
     <VerticalNavLink
@@ -64,7 +60,7 @@ const upgradeBanner = computed(() => {
         title: 'Register',
         to: 'register',
         target: '_blank',
-        icon: { icon: 'mdi-account-plus-outline' }
+        icon: { icon: 'mdi-account-plus-outline' },
       }"
     />
 
@@ -74,7 +70,7 @@ const upgradeBanner = computed(() => {
         title: 'Error',
         to: { path: '/error' },
         target: '_blank',
-        icon: { icon: 'mdi-alert-circle-outline' }
+        icon: { icon: 'mdi-alert-circle-outline' },
       }"
     />
 
@@ -85,35 +81,35 @@ const upgradeBanner = computed(() => {
       :item="{
         title: 'Typography',
         to: 'typography',
-        icon: { icon: 'mdi-alpha-t-box-outline' }
+        icon: { icon: 'mdi-alpha-t-box-outline' },
       }"
     />
     <VerticalNavLink
       :item="{
         title: 'Icons',
         to: 'icons',
-        icon: { icon: 'mdi-eye-outline' }
+        icon: { icon: 'mdi-eye-outline' },
       }"
     />
     <VerticalNavLink
       :item="{
         title: 'Cards',
         to: 'card-basic',
-        icon: { icon: 'mdi-credit-card-outline' }
+        icon: { icon: 'mdi-credit-card-outline' },
       }"
     />
     <VerticalNavLink
       :item="{
         title: 'Tables',
         to: 'tables',
-        icon: { icon: 'mdi-table' }
+        icon: { icon: 'mdi-table' },
       }"
     />
     <VerticalNavLink
       :item="{
         title: 'Form Layouts',
         to: 'form-layouts',
-        icon: { icon: 'mdi-form-select' }
+        icon: { icon: 'mdi-form-select' },
       }"
     />
   </ul>
@@ -129,8 +125,8 @@ const upgradeBanner = computed(() => {
       alt="upgrade-banner"
       transition="scale-transition"
       class="upgrade-banner mx-auto"
-      style="max-width: 230px;"
-    >
+      style="max-width: 230px"
+    />
   </a>
 </template>
 

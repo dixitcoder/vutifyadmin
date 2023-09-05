@@ -1,44 +1,52 @@
 <script>
-import logo from '@images/logo.svg?raw'
+import logo from "@images/logo.svg?raw"
 
 // import axios from '@axios'
 
-function firebaseLogin(email, password){
-  fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAnWTuhnVHA6lvSn9ST37axxjT_liM828A', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
+function firebaseLogin(email, password) {
+  fetch(
+    "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAnWTuhnVHA6lvSn9ST37axxjT_liM828A",
+    {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: email, password: password, returnSecureToken: true }),
     },
-    body: JSON.stringify({ email: email, password: password, "returnSecureToken": true }),
-  })
+  )
     .then(response => response.json())
     .then(response => console.log(JSON.stringify(response.idToken)))
 }
-import auth from '../auth'
+import auth from "../auth"
 
 export default {
-  data () {
+  data() {
     return {
-      email: 'joe@example.com',
-      pass: 'password1',
+      html: ' Please sign-in to your account and start the adventure',
+      email: "joe@example.com",
+      pass: "password1",
+      hide: true,
       remember: false,
       logo: logo,
       loggedIn: auth.loggedIn(),
     }
   },
-  created () {
+  created() {
     auth.onChange = loggedIn => {
       this.loggedIn = loggedIn
     }
   },
   methods: {
-    login () {
+    // show(){
+    //   this.hide = !this.hide
+    // },
+    login() {
       auth.login(this.email, this.pass, loggedIn => {
         if (!loggedIn) {
           this.error = true
         } else {
-          this.$router.replace(this.$route.query.redirect || '/dashboard')
+          this.$router.replace(this.$route.query.redirect || "/dashboard")
         }
       })
     },
@@ -88,9 +96,10 @@ export default {
         <h5 class="text-h5 font-weight-semibold mb-1">
           Welcome to Materio! 👋🏻
         </h5>
-        <p class="mb-0">
-          Please sign-in to your account and start the adventure
-        </p>
+        <p
+          class="mb-0"
+          v-html="html"
+        />
       </VCardText>
 
       <VCardText>
@@ -105,17 +114,18 @@ export default {
               />
             </VCol>
             <!-- password -->
+            
             <VCol cols="12">
               <VTextField
                 v-model="pass"
+                :type="hide ? 'password' : 'text'"
                 label="Password"
               />
-
               <!-- remember me checkbox -->
               <div class="d-flex align-center justify-space-between flex-wrap mt-1 mb-4">
                 <VCheckbox
-                  v-model="remember"
-                  label="Remember me"
+                  v-model="hide"
+                  label="show"
                 />
 
                 <a

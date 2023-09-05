@@ -154,6 +154,13 @@ const upgradeBanner = computed(() => {
           to: '/form-layouts',
         }"
       />
+      <VerticalNavLink
+        :item="{
+          title: 'Whatsapp',
+          icon: 'mdi-whatsapp',
+          to: '/whatsapp',
+        }"
+      />
     </template>
 
     <template #after-vertical-nav-items>

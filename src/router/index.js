@@ -48,6 +48,20 @@ const router = createRouter({
       path: 'form-layouts',
       beforeEnter: requireAuth,
       component: () => import('../pages/form-layouts.vue'),
+    },
+    {
+      path: 'whatsappList',
+      beforeEnter: requireAuth,
+      component: () => import('../pages/whatsappList.vue'),
+    },
+    {
+      path: 'product/:productId',
+      component: () => import('../pages/Deatsils.vue'),
+    },
+    {
+      path: 'whatsapp',
+      beforeEnter: requireAuth,
+      component: () => import('../pages/whatsapp.vue'),
     }],
   },
   {
@@ -80,7 +94,7 @@ function requireAuth(to, from, next) {
     next({
       path: '/login',
       query: {
-        redirect: to.fullPath,
+        redirect: ('/'),
       },
     })
   } else {
